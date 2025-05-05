@@ -1,9 +1,8 @@
 @import "tailwindcss";
 
-@theme {
- 
+@theme inline {
   --font-sans: var(--font-inter);
-  --font-title: var(--font-space-grotesk);
+  --font-space: var(--font-space-grotesk);
   --background: #ffffff;
   --foreground: #000000;
 }
