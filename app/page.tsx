@@ -19,8 +19,11 @@ export default function Home() {
       <div className="p-4 my-6">
         <h2 className="font-space ">Build from the ground up.</h2>
         <div className="font-sans text-sm my-2">
-          Stackroot is a modular frontend foundation for Web3 products — crafted with clarity, scalability, and quiet precision.
-          From wallet connections to staking dashboards, each component is designed to stand alone or plug seamlessly into your ecosystem.
+          I'm a senior Web3 frontend developer building modular tools with long-term focus and quiet precision.<br />
+          Stackroot is my personal framework — a growing suite of white-label components designed for performance, clarity and flexibility.
+          <br />
+          <br />
+          Whether you need a wallet integration, a custom staking UI, or a full launch stack, I build from the ground up — with intention.
         </div>
       </div>
 
