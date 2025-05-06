@@ -1,26 +1,27 @@
-'use client'
+"use client";
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
+import { Sun, Moon } from "lucide-react";
 
 const ThemeToggle: React.FC = () => {
-  const [darkMode, setDarkMode] = useState<boolean>(false)
+  const [darkMode, setDarkMode] = useState<boolean>(false);
 
   useEffect(() => {
     if (darkMode) {
-      document.documentElement.classList.add('dark')
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark')
+      document.documentElement.classList.remove("dark");
     }
-  }, [darkMode])
+  }, [darkMode]);
 
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className="px-4 py-2 rounded bg-neutral-200 dark:bg-neutral-700 text-sm"
+      className="px-4 py-2"
     >
-      Toggle {darkMode ? 'Light' : 'Dark'}
+      {darkMode ? <Sun /> : <Moon />}
     </button>
-  )
-}
+  );
+};
 
-export default ThemeToggle
+export default ThemeToggle;
