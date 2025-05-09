@@ -13,7 +13,7 @@ export default function Footer() {
               <Image
                 src="/icons/github-mark-white.svg"
                 alt="GitHub"
-                width={21}
+                width={20}
                 height={20}
               />
             </Link>

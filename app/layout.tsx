@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import '@rainbow-me/rainbowkit/styles.css';
+import { Providers } from './providers';
 
 import "./globals.css";
 
@@ -76,7 +78,9 @@ export default function RootLayout({
         <Header />
 
         <main className="flex-1 w-full px-4 md:px-8 py-8 container mx-auto overflow-y-auto font-sans">
-          {children}
+          <Providers>
+            {children}
+          </Providers>
         </main>
 
         <Footer />
