@@ -1,15 +1,41 @@
-// components/Hero.tsx
+import Link from "next/link";
+import Image from "next/image";
+
 export default function Hero() {
-    return (
-      <section id="hero" className="min-h-[70vh] flex flex-col justify-center items-start gap-4 px-6 md:px-8 py-16">
-        <h1 className="text-4xl md:text-5xl font-title font-semibold">Build from the ground up.</h1>
-        <p className="text-lg text-neutral-600 max-w-xl">
-          Stackroot is a personal framework for modular Web3 frontends — designed for clarity, reusability, and long-term value.
-        </p>
-        <a href="#modules" className="mt-6 inline-block px-6 py-2 bg-zinc-600 text-white rounded hover:bg-zinc-700 transition">
-          Explore modules
-        </a>
-      </section>
-    );
-  }
-  
+  return (
+    <section id="hero" className="min-h-[50vh] mb-6 flex flex-col justify-center items-start gap-4 max-w-7xl mx-auto px-4 md:px-8 py-16 scroll-mt-24">
+      <h1 className="text-4xl md:text-5xl font-root text-sky-700 font-semibold">Modular. Visual. Yours.</h1>
+      <div className="text-sm md:text-base text-sky-600 flex flex-col gap-2">
+        <span className="font-root text-xl mb-2">Frontend engineering for Web2 & Web3 — modular, fast, and made to fit.</span>
+        <span className="text-neutral-600">Freelance frontend developer available for project-based work.
+          With StackRoot, I showcase how I build — from wallet integrations to staking UIs, from Web2 dashboards to onchain tools.
+          Clean code, fast delivery, and a calm, professional mindset.</span>
+      </div>
+      <div className=" w-full flex items-center justify-between mt-6">
+
+        <Link href="#showcases" className="inline-block px-6 py-2 bg-sky-700 text-white rounded hover:bg-sky-600 transition">
+          Explore showcases
+        </Link>
+        <div className="flex items-center justify-end space-x-6">
+          <Link href="https://github.com/stackroot" target="_blank" rel="noopener noreferrer">
+            <Image
+              src="/icons/github.svg"
+              alt="GitHub"
+              width={21}
+              height={20}
+            />
+          </Link>
+          <Link href="https://x.com/stackroot" target="_blank" rel="noopener noreferrer">
+            <Image
+              src="/icons/x-black.svg"
+              alt="X"
+              width={18}
+              height={18}
+            />
+          </Link>
+
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 
 import "./globals.css";
 
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Lexend_Deca, Space_Grotesk } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -12,17 +12,56 @@ const inter = Inter({
   display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
+const lexendDeca = Lexend_Deca({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-lexend-deca",
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "stackroot",
-  description: "build from the ground up",
+  title: "StackRoot | Modular Web2 & Web3 Frontend Engineering",
+  description:
+    "Freelance frontend developer for Web2 & Web3. Modular, fast, and calm. From wallet integrations to staking dashboards – built from the ground up.",
+  keywords: [
+    "freelance Web3 developer",
+    "frontend engineer Web2 Web3",
+    "Next.js expert",
+    "React staking dashboard",
+    "wallet connect integration",
+    "Web3 UI developer",
+    "modular frontend",
+    "StackRoot developer",
+    "custom dApp interfaces",
+    "Ethereum dashboard UI"
+  ],
+  authors: [{ name: "StackRoot" }],
+  openGraph: {
+    title: "StackRoot | Modular Web2 & Web3 Frontend Engineering",
+    description:
+      "Clean code. Fast delivery. Calm mindset. Discover how StackRoot builds Web2 & Web3 interfaces.",
+    url: "https://stackroot.dev",
+    siteName: "StackRoot",
+    images: [
+      {
+        url: "https://stackroot.dev/images/stackroot-og-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "StackRoot | Modular Web2 & Web3 Frontend Engineering",
+    description:
+      "Modular, fast, and made to fit — frontend engineering by a calm professional for Web2 & Web3 projects.",
+    images: ["https://stackroot.dev/images/stackroot-og-image.jpg"],
+  },
+  metadataBase: new URL("https://stackroot.dev"),
 };
+
 
 export default function RootLayout({
   children,
@@ -32,7 +71,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`min-h-screen flex flex-col ${inter.variable} ${spaceGrotesk.variable} antialiased bg-white text-zinc-900 dark:bg-zinc-900 dark:text-zinc-200`}
+        className={`min-h-screen flex flex-col ${inter.variable} ${lexendDeca.variable} antialiased bg-white text-zinc-900 dark:bg-zinc-900 dark:text-zinc-200`}
       >
         <Header />
 

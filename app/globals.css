@@ -4,7 +4,7 @@
 
 @theme inline {
   --font-sans: var(--font-inter);
-  --font-space: var(--font-space-grotesk);
+  --font-root: var(--font-lexend-deca);
 }
 
 body {
