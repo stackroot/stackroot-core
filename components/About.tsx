@@ -1,6 +1,7 @@
+import Icons from "./Icons";
 export default function About() {
   return (
-    <section id="about" className="min-h-[50vh] md:min-h-screen max-w-7xl mx-auto px-4 md:px-8 py-16 scroll-mt-18">
+    <section id="about" className="max-w-7xl mx-auto px-4 md:px-8 py-16 scroll-mt-18">
       <h2 className="text-2xl md:text-4xl font-root mb-6 text-sky-700">About StackRoot</h2>
       <p className="text-neutral-700 max-w-3xl leading-relaxed mb-8">
         I’m a senior frontend developer with over a decade of experience building
@@ -16,7 +17,7 @@ export default function About() {
 
 
       <h3 className="text-xl font-semibold text-sky-700 font-root my-6">Core Skills</h3>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-gray-500 text-sm mb-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-neutral-600 text-sm mb-6">
         <span>Next.js</span>
         <span>JavaScript</span>
         <span>TypeScript</span>
@@ -27,14 +28,18 @@ export default function About() {
         <span>Viem</span>
         <span>Ethers.js</span>
         <span>Solidity</span>
+        <span>Hardhat</span>
+        <span>GraphQL</span>
         <span>Vercel</span>
         <span>GitHub</span>
+        <span>Figma</span>
       </div>
-
+      
       <div className="my-8 font-root text-sky-600 text-sm">
         Currently open for freelance projects.
         Let’s build something that actually works.
       </div>
+      <Icons />
     </section>
   );
 }
