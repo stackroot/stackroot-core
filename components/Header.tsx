@@ -24,7 +24,7 @@ export default function Header() {
             />
             <div className="flex flex-col">
               <h1 className="font-root font-bold text-2xl md:text-4xl text-sky-700">StackRoot</h1>
-              <span className="font-root text-sm text-zinc-500 -my-1 ">
+              <span className="font-root text-sm text-pink-600 -my-1 ">
                 build from the ground up
               </span>
             </div>

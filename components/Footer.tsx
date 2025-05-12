@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="flex items-center justify-center w-full h-16 bg-sky-900 text-zinc-200 dark:bg-zinc-200 dark:text-zinc-900">
-      <div className="w-full px-4 md:px-8 flex items-center justify-between">
+    <footer className="flex items-center justify-center w-full h-24  bg-sky-900 text-zinc-200 dark:bg-zinc-200 dark:text-zinc-900">
+      <div className="w-full px-4 md:px-8 flex items-center justify-between h-full py-6">
         <span className="font-root">
           &copy;{new Date().getFullYear()} stackroot.dev
         </span>

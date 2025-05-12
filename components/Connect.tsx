@@ -1,102 +1,67 @@
 "use client";
-import { ConnectButton } from '@rainbow-me/rainbowkit';
 
-export default function Connect() {
-    return (
-        
-            <ConnectButton.Custom>
-                {({
-                    account,
-                    chain,
-                    openAccountModal,
-                    openChainModal,
-                    openConnectModal,
-                    authenticationStatus,
-                    mounted,
-                }) => {
-                    // Note: If your app doesn't use authentication, you
-                    // can remove all 'authenticationStatus' checks
-                    const ready = mounted && authenticationStatus !== 'loading';
-                    const connected =
-                        ready &&
-                        account &&
-                        chain &&
-                        (!authenticationStatus ||
-                            authenticationStatus === 'authenticated');
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { Connector, useConnect } from 'wagmi';
 
-                    return (
-                        <div
-                            {...(!ready && {
-                                'aria-hidden': true,
-                                'style': {
-                                    opacity: 0,
-                                    pointerEvents: 'none',
-                                    userSelect: 'none',
-                                },
-                            })}
-                        >
-                            {(() => {
-                                if (!connected) {
-                                    return (
-                                        <button onClick={openConnectModal} type="button" className='cursor-pointer text-white bg-sky-600 hover:bg-sky-700 rounded-lg px-4 py-2'>
-                                            Connect Wallet
-                                        </button>
-                                    );
-                                }
 
-                                if (chain.unsupported) {
-                                    return (
-                                        <button onClick={openChainModal} type="button">
-                                            Wrong network
-                                        </button>
-                                    );
-                                }
+export function ConnectOptions() {
+  const { connectors, connect } = useConnect();
+  const [availableConnectors, setAvailableConnectors] = useState<Connector[]>([]);
 
-                                return (
-                                    <div style={{ display: 'flex', gap: 12 }}>
-                                        <button
-                                            onClick={openChainModal}
-                                            style={{ display: 'flex', alignItems: 'center' }}
-                                            type="button"
-                                            className='cursor-pointer text-white bg-sky-600 hover:bg-sky-700 rounded-lg px-4 py-2'
-                                        >
-                                            {chain.hasIcon && (
-                                                <div
-                                                    style={{
-                                                        background: chain.iconBackground,
-                                                        width: 12,
-                                                        height: 12,
-                                                        borderRadius: 999,
-                                                        overflow: 'hidden',
-                                                        marginRight: 4,
-                                                    }}
-                                                >
-                                                    {chain.iconUrl && (
-                                                        <img
-                                                            alt={chain.name ?? 'Chain icon'}
-                                                            src={chain.iconUrl}
-                                                            style={{ width: 12, height: 12 }}
-                                                        />
-                                                    )}
-                                                </div>
-                                            )}
-                                            {chain.name}
-                                        </button>
+  useEffect(() => {
+    const detectAvailableConnectors = async () => {
+      const checks = await Promise.all(
+        connectors.map(async (connector) => {
+          try {
+            const provider = await connector.getProvider();
+            const isAvailable =
+              connector.id === 'walletConnect' || !!provider;
+            return isAvailable ? connector : null;
+          } catch {
+            return connector.id === 'walletConnect' ? connector : null;
+          }
+        })
+      );
+      setAvailableConnectors(checks.filter(Boolean) as Connector[]);
+    };
 
-                                        <button onClick={openAccountModal} type="button"
-                                            className='cursor-pointer text-white bg-sky-600 hover:bg-sky-700 rounded-lg px-4 py-2'
-                                        >
-                                            {account.displayName}
-                                            {account.displayBalance
-                                                ? ` (${account.displayBalance})`
-                                                : ''}
-                                        </button>
-                                    </div>
-                                );
-                            })()}
-                        </div>
-                    );
-                }}
-            </ConnectButton.Custom>
-    );
+    detectAvailableConnectors();
+  }, [connectors]);
+
+  return (
+    <div className="space-y-2">
+      {availableConnectors.map((connector) => (
+        <ConnectOption
+          key={connector.uid}
+          connector={connector}
+          onClick={() => connect({ connector })}
+        />
+      ))}
+    </div>
+  );
+}
+
+function ConnectOption({
+  connector,
+  onClick,
+}: {
+  connector: Connector;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className="px-4 py-2 rounded bg-sky-500 text-white hover:bg-sky-600 disabled:opacity-50 mx-2 flex"
+    >
+      Connect with 
+            <Image
+                src={`/icons/${connector.name}.svg`}
+                alt={connector.name}
+                width={20}
+                height={20}
+                className="inline-block ml-2 mr-1 fill-white text-white"
+            />
+    </button>
+  );
 }

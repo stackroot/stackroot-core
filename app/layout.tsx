@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import '@rainbow-me/rainbowkit/styles.css';
 import { Providers } from './providers';
 
 import "./globals.css";
 
-import { Inter, Lexend_Deca, Space_Grotesk } from "next/font/google";
+import { Inter, Lexend_Deca } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
