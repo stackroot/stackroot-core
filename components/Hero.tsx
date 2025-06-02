@@ -6,10 +6,10 @@ export default function Hero() {
     <section id="hero" className="min-h-[50vh] mb-6 flex flex-col justify-center items-start gap-4 max-w-7xl mx-auto px-4 md:px-8 py-16 scroll-mt-24">
       <h1 className="text-4xl md:text-5xl font-root text-sky-700 font-semibold">Modular. Visual. Yours.</h1>
       <div className="text-sm md:text-base text-pink-600 flex flex-col gap-2">
-        <span className="font-root text-xl mb-2">Frontend engineering for Web2 & Web3, modular, fast, and made to fit.</span>
+        <span className="font-root text-xl mb-2">Frontend engineering for Web3, modular, fast, and made to fit.</span>
         <span className="text-neutral-600">
           Senior Frontend Developer with a passion for modular Web3 interfaces.<br />
-          With StackRoot, I showcase how I build, from wallet integrations to staking UIs, from Web2 dashboards to onchain tools.
+          With StackRoot, I showcase how I build, from wallet integrations to staking UIs, from dashboards to onchain tools.
           Clean code, thoughtful design, and a calm, professional mindset.
         </span>
       </div>
