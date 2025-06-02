@@ -21,12 +21,12 @@ const lexendDeca = Lexend_Deca({
 });
 
 export const metadata: Metadata = {
-  title: "StackRoot | Modular Web2 & Web3 Frontend Engineering",
+  title: "StackRoot | Modular Web3 Frontend Engineering",
   description:
-    "Freelance frontend developer for Web2 & Web3. Modular, fast, and calm. From wallet integrations to staking dashboards – built from the ground up.",
+    "Frontend developer for Web3. Modular, fast, and calm. From wallet integrations to staking dashboards – built from the ground up.",
   keywords: [
-    "freelance Web3 developer",
-    "frontend engineer Web2 Web3",
+    "Web3 developer",
+    "frontend engineer Web3",
     "Next.js expert",
     "React staking dashboard",
     "wallet connect integration",
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "StackRoot" }],
   openGraph: {
-    title: "StackRoot | Modular Web2 & Web3 Frontend Engineering",
+    title: "StackRoot | Modular Web3 Frontend Engineering",
     description:
-      "Clean code. Fast delivery. Calm mindset. Discover how StackRoot builds Web2 & Web3 interfaces.",
+      "Clean code. Fast delivery. Calm mindset. Discover how StackRoot builds Web3 interfaces.",
     url: "https://stackroot.dev",
     siteName: "StackRoot",
     images: [
@@ -55,9 +55,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "StackRoot | Modular Web2 & Web3 Frontend Engineering",
+    title: "StackRoot | Modular Web3 Frontend Engineering",
     description:
-      "Modular, fast, and made to fit — frontend engineering by a calm professional for Web2 & Web3 projects.",
+      "Modular, fast, and made to fit ,  frontend engineering by a calm professional for Web3 projects.",
     images: ["https://stackroot.dev/images/stackroot-og-image.jpg"],
   },
   metadataBase: new URL("https://stackroot.dev"),

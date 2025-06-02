@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Connector, useConnect } from 'wagmi';
-
+import { Button } from '@/components/ui/button';
 
 export function ConnectOptions() {
   const { connectors, connect } = useConnect();
@@ -11,8 +11,13 @@ export function ConnectOptions() {
 
   useEffect(() => {
     const detectAvailableConnectors = async () => {
+      const wallets = ['metaMask', 'injected', 'walletConnect'];
+      const ordered = wallets
+        .map((id) => connectors.find((c) => c.id === id))
+        .filter(Boolean) as Connector[];
+
       const checks = await Promise.all(
-        connectors.map(async (connector) => {
+        ordered.map(async (connector) => {
           try {
             const provider = await connector.getProvider();
             const isAvailable =
@@ -23,7 +28,9 @@ export function ConnectOptions() {
           }
         })
       );
-      setAvailableConnectors(checks.filter(Boolean) as Connector[]);
+
+      const firstAvailable = checks.find(Boolean);
+      setAvailableConnectors(firstAvailable ? [firstAvailable] : []);
     };
 
     detectAvailableConnectors();
@@ -50,18 +57,18 @@ function ConnectOption({
   onClick: () => void;
 }) {
   return (
-    <button
+    <Button
       onClick={onClick}
-      className="px-4 py-2 rounded bg-sky-500 text-white hover:bg-sky-600 disabled:opacity-50 mx-2 flex"
+
     >
-      Connect with 
-            <Image
-                src={`/icons/${connector.name}.svg`}
-                alt={connector.name}
-                width={20}
-                height={20}
-                className="inline-block ml-2 mr-1 fill-white text-white"
-            />
-    </button>
+      Connect with
+      <Image
+        src={`/icons/${connector.name}.svg`}
+        alt={connector.name}
+        width={20}
+        height={20}
+        className="inline-block ml-2 mr-1 fill-white text-white"
+      />
+    </Button>
   );
 }

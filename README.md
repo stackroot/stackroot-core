@@ -1,11 +1,11 @@
 # stackroot-core
 
-**Modular frontend architecture for Web3 UI tooling — built from the ground up.**  
+**Modular frontend architecture for Web3 UI tooling ,  built from the ground up.**  
 This is a personal showcase project demonstrating a full-stack Web3 setup with a clean, scalable frontend structure.
 
 ## Purpose
 
-`stackroot-core` is not a commercial template — it's a demonstration of how I approach modular Web3 architecture with modern tooling. The focus is on developer experience, clarity, and composability.
+`stackroot-core` is not a commercial template ,  it's a demonstration of how I approach modular Web3 architecture with modern tooling. The focus is on developer experience, clarity, and composability.
 
 ## Features (Showcase)
 
@@ -33,4 +33,4 @@ This is a personal showcase project demonstrating a full-stack Web3 setup with a
 
 ---
 
-> Part of [stackroot.dev](https://stackroot.dev) — my evolving ecosystem of modular Web3 tools and interfaces.
+> Part of [stackroot.dev](https://stackroot.dev) ,  my evolving ecosystem of modular Web3 tools and interfaces.

@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 export default function Contact() {
   return (
     <section
@@ -8,20 +9,22 @@ export default function Contact() {
       <div className="mb-4 max-w-xl">
         I'm always curious to connect with developers, teams and projects that value thoughtful design, clear frontend architecture, and Web3 innovation. <br />
         {/* I love to work with teams that are passionate about their product and want to build something great.
-        If you're building something exciting and believe we could be a good fit — feel free to reach out. */}
+        If you're building something exciting and believe we could be a good fit ,  feel free to reach out. */}
       </div>
       {/* <div className="mb-4 max-w-xl">
         I work fast, communicate clearly, and build with a strong focus on usability,
         modularity, and clean code. Let's talk about your project and see if it's a fit.
       </div> */}
-      <a
-        href="mailto:stackroot@proton.me"
-        className="hover:text-zinc-100 hover:underline font-root"
+      <Button
+        asChild
+        className="btn"
       >
-        Send me an email
-      </a>
+        <a href="mailto:stackroot@proton.me">
+          Send me an email
+        </a>
+      </Button>
       <p className="mt-6 text-sm text-white">
-          Or connect via <a href="https://twitter.com/stackroot" target="_blank" className="underline">X</a> or <a href="https://github.com/stackroot" target="_blank" className="underline">GitHub</a>.
+          Or connect via <a href="https://x.com/stackroot" target="_blank" className="underline">X</a> or <a href="https://github.com/stackroot" target="_blank" className="underline">GitHub</a>.
         </p>
     </section>
   );

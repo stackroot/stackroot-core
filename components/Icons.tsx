@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function Icons() {
     return (
-        <div className="grid grid-cols-4 md:grid-cols-12 gap-4 mt-8 pt-6">
+        <div className="grid grid-cols-5 md:grid-cols-13 gap-4 mt-8 pt-6">
             <div className="flex items-center">
                 <Image
                     src="/icons/logo-next.svg"
@@ -34,6 +34,15 @@ export default function Icons() {
                 <Image
                     src="/icons/logo-tailwindcss.svg"
                     alt="Tailwind CSS logo"
+                    width={24}
+                    height={24}
+                    className="inline-block mx-2"
+                />
+            </div>
+            <div className="flex items-center">
+                <Image
+                    src="/icons/logo-shadcnui.svg"
+                    alt="ShadCN UI logo"
                     width={24}
                     height={24}
                     className="inline-block mx-2"
