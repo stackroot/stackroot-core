@@ -12,15 +12,15 @@ This is a personal showcase project demonstrating a full-stack Web3 setup with a
 - 💡 **Next.js 15** — Using the App Router and React Server Components
 - 🎨 **Tailwind CSS v4.1** — With tokenized theming and responsive UI
 - 🧱 **Component-first** — Built for reusability and clean code organization
-- 🔌 **Wallet Integration** — RainbowKit & Wagmi for seamless wallet connection
+- 🔌 **Wallet Integration** — Wagmi for seamless wallet connection
 - 🪙 **ERC-20 Token Deployment** — UI flow to deploy and mint a custom token
 - 📈 **Staking Interface** — Stake the ERC-20 token via a connected staking contract
 
 ## Stack
 
 - `next@15`
-- `tailwindcss@4.1`
-- `rainbowkit`, `wagmi`, `viem`
+- `tailwindcss@4.1`, `shadcn-ui`
+- `wagmi`, `viem`
 - `ethers.js`
 - `TypeScript`, `App Router`
 
