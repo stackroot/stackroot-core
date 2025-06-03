@@ -1,10 +1,9 @@
 "use client";
 
 import { Account } from "@/components/account";
-import { ConnectOptions } from "@/components/connect";
+import { ConnectOptions } from "@/components/connect-options";
 
 import { useAccount } from "wagmi";
-
 
 function ConnectWallet() {
     const { isConnected } = useAccount()
