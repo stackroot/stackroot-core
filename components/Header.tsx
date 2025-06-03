@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import ThemeToggle from "./ThemeToggle";
+import { navItems } from "@/lib/config";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,9 +32,11 @@ export default function Header() {
         </div>
 
         <nav className="hidden md:flex space-x-6 text-sm font-sans">
-          <Link href="/#showcases" className="hover:text-sky-600">Showcases</Link>
-          <Link href="/#about" className="hover:text-sky-600">About</Link>
-          <Link href="/#contact" className="hover:text-sky-600">Contact</Link>
+          {navItems.map((item) => (
+            <Link key={item.href} href={item.href} className="hover:text-sky-600">
+              {item.label}
+            </Link>
+          ))}
         </nav>
 
         {/* Mobile menu button */}
@@ -51,9 +53,11 @@ export default function Header() {
       {/* Mobile menu */}
       {isOpen && (
         <div className="md:hidden px-4 pb-4 space-y-2 font-sans">
-          <Link href="/#showcases" className="block hover:text-sky-600">Showcases</Link>
-          <Link href="/#about" className="block hover:text-sky-600">About</Link>
-          <Link href="/#contact" className="block hover:text-sky-600">Contact</Link>
+          {navItems.map((item) => (
+            <Link key={item.href} href={item.href} className="block hover:text-sky-600">
+              {item.label}
+            </Link>
+          ))}
         </div>
       )}
 

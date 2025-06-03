@@ -1,8 +1,8 @@
-import Hero from '@/components/Hero'
-import ShowCase from '@/components/ShowCase'
-import About from '@/components/About'
-import Contact from '@/components/Contact'
-import Identity from '@/components/Identity'
+import Hero from '@/components/hero'
+import ShowCase from '@/components/showcase'
+import About from '@/components/about'
+import Contact from '@/components/contact'
+import Identity from '@/components/identity'
 
 export default function HomePage() {
   return (

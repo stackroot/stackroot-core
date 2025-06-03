@@ -1,4 +1,5 @@
-import Icons from "./Icons";
+import Icons from "@/components/icons";
+
 export default function About() {
   return (
     <section id="about" className="min-h-[70vh] max-w-7xl mx-auto px-4 md:px-8 py-16 scroll-mt-18">

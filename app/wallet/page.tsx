@@ -1,7 +1,7 @@
 "use client";
 
-import { Account } from "@/components/Account";
-import { ConnectOptions } from "@/components/Connect";
+import { Account } from "@/components/account";
+import { ConnectOptions } from "@/components/connect";
 
 import { useAccount } from "wagmi";
 

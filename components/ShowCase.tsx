@@ -35,8 +35,8 @@ export default function ShowCase() {
                 {item.title}
               </CardTitle>
               <CardAction className="flex justify-between items-center">
-                <CardDescription className="text-gray-700">
-                  {item.comingSoon ? <Badge variant="secondary">Coming Soon</Badge> : <Badge>Available Now</Badge>}
+                <CardDescription>
+                  {item.comingSoon ? <Badge variant="secondary">Coming Soon</Badge> : <Badge variant="default">Available Now</Badge>}
                 </CardDescription>
               </CardAction>
             </CardHeader>
@@ -49,14 +49,12 @@ export default function ShowCase() {
             <CardFooter className="flex justify-end">
               {item.comingSoon ? (
                 <Button
-                  className={`btn`}
                   disabled
                 >
                   Coming Soon
                 </Button>
               ) : (
                 <Button
-                  className="btn"
                   onClick={() => window.location.href = item.url}
                 >
                   Explore Now
